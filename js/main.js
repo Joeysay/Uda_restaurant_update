@@ -163,11 +163,12 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = `restaurant-img ${restaurant.name}`;
   li.append(image);
-  image.alt = 'restaurant_image'
+
 
   const name = document.createElement('h3');
-  //add tabindex in h3, when the select a restuarant, focus will be on the name of the restuarant
+  //add tabindex in h3, when the select a restaurant, focus will be on the name of the restaurant
   const tab = document.createAttribute('tabindex');
   tab.value = -1;
   name.setAttributeNode(tab);
@@ -215,28 +216,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
-
-/* Register ServiceWorker
- */
-
-
-
- if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./js/sw/sw.js')
-    .then(function (reg) {
-      if(reg.installing){
-        console.log("ServiceWorker installing");
-      } else if(reg.waiting){
-        console.log("ServiceWorker installed");
-      } else if (reg.active) {
-        console.log("ServiceWorker active");
-      }
-      console.log('ServiceWorker registration successful with scope: ', reg.scope);
-    })
-    .catch(function (err) {
-      console.log('ServiceWorker registration failed: ', err)
-    });
-  });
-}
