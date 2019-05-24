@@ -1,5 +1,5 @@
 
-var staticCacheName = 'restaurant_v1';
+var staticCacheName = 'restaurant_v2';
 var urlTOCache = [
   '/',
   '/restaurant.html',
@@ -18,6 +18,7 @@ var urlTOCache = [
   '/js/main.js',
   '/js/restaurant_info.js',
   '/js/dbhelper.js',
+  '/js/sw_control.js',
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
   'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css'
 ];
